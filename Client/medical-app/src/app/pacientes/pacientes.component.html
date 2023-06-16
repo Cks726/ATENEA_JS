@@ -1,1 +1,61 @@
-<p>pacientes works!</p>
+<!--FORMULARIO PACIENTES-->
+<p class="h1 text-center col-md-3">PACIENTES</p>
+<form>
+    <div>
+        <div class="form-row">
+            <div class="form-group col-md-3">
+                <label for="name">Nombre</label>
+                <input type="name" class="form-control" id="name" placeholder="Nombre">
+            </div>
+            <div class="form-group col-md-3">
+                <label for="lastName">Apellido</label>
+                <input type="name" class="form-control" id="lastName" placeholder="Apellido">
+            </div>
+            <div class="form-group col-md-3">
+                <label for="cc">Cédula de ciudadanía</label>
+                <input type="cc" class="form-control" id="cc" placeholder="Cédula de ciudadanía">
+            </div>
+            <div class="form-group col-md-3">
+                <label for="date">Fecha de nacimiento</label>
+                <input type="date" class="form-control" id="date" placeholder="Fecha de nacimiento">
+            </div>
+            <div class="form-group col-md-3">
+                <label for="phone">Teléfono</label>
+                <input type="phone" class="form-control" id="phone" placeholder="Teléfono">
+            </div>
+        </div>
+    </div>
+    <button type="submit" class="btn btn-primary">Sign in</button>
+  </form>
+
+
+
+
+<div class="card border-primary mb-3" style="max-width: 50rem;">
+    <div class="card-header"> Pacientes </div>  
+        <div class="card-tittle">
+            <h5 class="card-tittle text-primary">Listado Pacientes</h5>
+            <table class="table table-dark">
+                <thead>
+                    <tr>
+                        <th scope="col">Nombre</th>
+                        <th scope="col">Apellido</th>
+                        <th scope="col">Cédula</th>
+                        <th scope="col">Fecha de nacimiento</th>
+                        <th scope="col">Teléfono</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr scope="row" *ngFor="let paciente of pacientes">
+                        <td>{{paciente.nombre}}</td>
+                        <td>{{paciente.apellido}}</td>
+                        <td>{{paciente.cedula}}</td>
+                        <td>{{paciente.fecha_nacimiento}}</td>
+                        <td>{{paciente.telefono}}</td>
+                    </tr>
+                    
+                </tbody>
+            </table>
+        </div>
+</div>
+
