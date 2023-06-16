@@ -7,11 +7,15 @@ import { FooterComponent } from './footer/footer.component';
 import { PacientesComponent } from './pacientes/pacientes.component';
 import { RouterModule, Routes } from '@angular/router';
 import { DoctoresComponent } from './doctores/doctores.component';
+import { CitasComponent } from './citas/citas.component';
+import { HomeComponent } from './home/home.component';
 
 const routes: Routes = [
   {path: '',redirectTo: '/home', pathMatch: 'full'},
+  {path: 'home', component: HomeComponent},
   {path: 'pacientes', component: PacientesComponent},
   {path: 'doctores', component: DoctoresComponent},
+  {path: 'citaMedica', component: CitasComponent},
   
 
 ]
@@ -22,7 +26,9 @@ const routes: Routes = [
     HeaderComponent,
     FooterComponent,
     PacientesComponent,
-    DoctoresComponent
+    DoctoresComponent,
+    CitasComponent,
+    HomeComponent
   ],
   imports: [
     BrowserModule,
