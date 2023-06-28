@@ -1,18 +1,19 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
-import { LoginComponent } from './login.component';
+import { CitaComponent } from './cita.component';
 
-describe('LoginComponent', () => {
-  let component: LoginComponent;
-  let fixture: ComponentFixture<LoginComponent>;
+describe('AgendarCitaComponent', () => {
+  let component: CitaComponent;
+  let fixture: ComponentFixture<CitaComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [LoginComponent]
-    }).compileComponents();
+      declarations: [ CitaComponent ]
+    })
+    .compileComponents();
   });
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(LoginComponent);
+    fixture = TestBed.createComponent(CitaComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
