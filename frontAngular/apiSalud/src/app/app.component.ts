@@ -1,11 +1,26 @@
-import { Component } from '@angular/core';
-
+import { Component, OnInit } from '@angular/core';
+import { Router, NavigationEnd } from '@angular/router';
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']
 })
-export class AppComponent {
-  title = 'apiSalud';
+export class AppComponent implements OnInit {
+  mostrarHeader: boolean = false;
+
+  constructor(private router: Router) {}
+
+  ngOnInit(): void {
+    this.router.events.subscribe((event) => {
+      if (event instanceof NavigationEnd) {
+        // Verificar la ruta actual
+        if (event.url === '/login') {
+          this.mostrarHeader = false;
+        } else {
+          this.mostrarHeader = true;
+        }
+      }
+    });
+  }
 }
