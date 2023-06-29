@@ -1,8 +1,7 @@
-import { NgModule } from '@angular/core';
+import { NgModule, OnInit } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { RouterModule, Routes } from '@angular/router';
-import { FormsModule} from '@angular/forms'
-
+import { FormsModule, ReactiveFormsModule} from '@angular/forms'
 
 
 import { AppComponent } from './app.component';
@@ -11,14 +10,19 @@ import { CitaComponent } from './cita/cita.component';
 import { HeaderpComponent } from './headerp/headerp.component';
 import { LoginComponent } from './login/login.component';
 import { FormularioComponent } from './formulario/formulario.component';
+import { PerfildComponent } from './perfild/perfild.component';
+import { ErrorComponent } from './error/error.component';
+
 
 const routes: Routes = [
   {path: '', redirectTo: '/login', pathMatch: 'full'},
   {path: 'login', component:LoginComponent},
   {path: 'perfilp',component:PerfilpComponent },
   {path: 'cita', component:CitaComponent},
-  {path: 'formulario', component:FormularioComponent}
+  {path: 'formulario', component:FormularioComponent},
+  {path: 'perfild', component:PerfildComponent}
 ]
+
 
 
 @NgModule({
@@ -28,11 +32,12 @@ const routes: Routes = [
     CitaComponent, 
     HeaderpComponent, 
     LoginComponent, 
-    FormularioComponent
+    FormularioComponent, PerfildComponent, ErrorComponent
   ],
   imports: [
     BrowserModule,
     FormsModule,
+    ReactiveFormsModule,
     RouterModule.forRoot(routes)
   ],
   providers: [],

@@ -1,0 +1,21 @@
+<div class="centered-container">
+    <img src="assets/img/iconod.png" alt="" width="50" height="50">
+    <div class="profile-header">
+      <h2>{{ doctor.nombre }}</h2>
+      <h3>{{ doctor.apellido }}</h3>
+    </div>
+  
+    <div class="profile-details">
+      <div class="profile-info">
+        <p><strong>Especialización:</strong> {{ doctor.especializacion }}</p>
+        <p><strong>Consultorio:</strong> {{ doctor.consultorio }}</p>
+        <p><strong>Correo:</strong> {{ doctor.correo }}</p>
+      </div>
+  
+      <div class="profile-actions">
+        <button class="edit-button">Editar Perfil</button>
+        <button class="delete-button">Eliminar Perfil</button>
+      </div>
+    </div>
+  </div>
+  

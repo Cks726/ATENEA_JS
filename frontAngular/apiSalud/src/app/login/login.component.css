@@ -1,3 +1,7 @@
+header{
+  background-color: #0056b3;
+}
+
 .login-container {
     font-family: monospace;
     display: flex;
