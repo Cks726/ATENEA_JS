@@ -12,6 +12,7 @@ import { LoginComponent } from './login/login.component';
 import { FormularioComponent } from './formulario/formulario.component';
 import { PerfildComponent } from './perfild/perfild.component';
 import { ErrorComponent } from './error/error.component';
+import { HeaderdComponent } from './headerd/headerd.component';
 
 
 const routes: Routes = [
@@ -20,7 +21,8 @@ const routes: Routes = [
   {path: 'perfilp',component:PerfilpComponent },
   {path: 'cita', component:CitaComponent},
   {path: 'formulario', component:FormularioComponent},
-  {path: 'perfild', component:PerfildComponent}
+  {path: 'perfild', component:PerfildComponent},
+  {path: 'error', component:ErrorComponent}
 ]
 
 
@@ -32,7 +34,7 @@ const routes: Routes = [
     CitaComponent, 
     HeaderpComponent, 
     LoginComponent, 
-    FormularioComponent, PerfildComponent, ErrorComponent
+    FormularioComponent, PerfildComponent, ErrorComponent, HeaderdComponent
   ],
   imports: [
     BrowserModule,
