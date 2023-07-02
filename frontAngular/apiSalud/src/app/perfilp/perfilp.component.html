@@ -1,40 +1,52 @@
-<div class="centered-container">
-  <h2>Perfil de Usuario</h2>
-  
-  <img class="icono" src="assets/img/icono.png" alt="icono" width="80" height="80">
+<div class="fond">
+  <header class="header">
+    <nav class="navbar">
+      <ul class="nav-list">
+        <li class="nav-item">
+          <a routerLink="/perfilp" routerLinkActive="active">Perfil Paciente</a>
+        </li>
+        <li class="nav-item">
+          <a routerLink="/cita" routerLinkActive="active">Agendar Cita</a>
+        </li>
+        <li class="nav-item">
+          <a routerLink="/login" routerLinkActive="active">Cerrar Sesión</a>
+        </li>
+      </ul>
+    </nav>
+  </header>
 
-  <div class="form-group">
-    <label for="nombre">Nombre:</label>
-    <p id="nombre">{{ nombre }}</p>
-    <p>Wilson</p>
-  </div>
-  
-  <div class="form-group">
-    <label for="apellido">Apellido:</label>
-    <p id="apellido">{{ apellido }}</p>
-    <p>Serrato Garzón</p>
-  </div>
-  
-  <div class="form-group">
-    <label for="cedula">Número de Cédula:</label>
-    <p id="cedula">{{ cedula }}</p>
-    <p>123456789</p>
-  </div>
-  
-  <div class="form-group">
-    <label for="edad">Edad:</label>
-    <p id="edad">{{ edad }}</p>
-    <p>100</p>
-  </div>
-  
-  <div class="form-group">
-    <label for="telefono">Teléfono:</label>
-    <p id="telefono">{{ telefono }}</p>
-    <p>987654321</p>
-  </div>
-  
-  <div class="buttons">
-    <button (click)="editarPerfil()">Editar Perfil</button>
-    <button (click)="eliminarPerfil()">Eliminar Perfil</button>
+  <div class="centered-container">
+    <h2>Perfil de Usuario</h2>
+
+    <div class="form-group">
+      <label for="nombre">Nombre:</label>
+      <p id="nombre">{{ nombre }}</p>
+    </div>
+
+    <div class="form-group">
+      <label for="apellido">Apellido:</label>
+      <p id="apellido">{{ apellido }}</p>
+    </div>
+
+    <div class="form-group">
+      <label for="cedula">Número de Cédula:</label>
+      <p id="cedula">{{ cedula }}</p>
+    </div>
+
+    <div class="form-group">
+      <label for="edad">Edad:</label>
+      <p id="edad">{{ edad }}</p>
+    </div>
+
+    <div class="form-group">
+      <label for="telefono">Teléfono:</label>
+      <p id="telefono">{{ telefono }}</p>
+    </div>
+
+    <div class="buttons">
+      <button class="editarPerfil" (click)="editarPerfil()">Editar Perfil</button>
+      <button class="Guardar" (click)="guardarPerfil()">Guardar</button>
+      <button class="eliminarPerfil" (click)="eliminarPerfil()">Eliminar Perfil</button>
+    </div>
   </div>
 </div>

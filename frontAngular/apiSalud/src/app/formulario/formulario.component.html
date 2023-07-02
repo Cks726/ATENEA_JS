@@ -4,17 +4,17 @@
     <div class="form-group">
       <label for="tipoPersona">Tipo de persona:</label>
       <div class="form-group">
-        
+
         <div class="button-group">
-          <button type="button" (click)="tipoPersona ='paciente'" [class.active]="tipoPersona === 'paciente'">Paciente</button>
-          <button type="button" (click)="tipoPersona ='doctor'" [class.active]="tipoPersona === 'doctor'">Doctor</button>
+          <button type="button" (click)="tipoPersona = 'paciente'" [class.active]="tipoPersona === 'paciente'">Paciente</button>
+          <button type="button" (click)="tipoPersona = 'doctor'" [class.active]="tipoPersona === 'doctor'">Doctor</button>
         </div>
       </div>
-      
+
       
     </div>
 
-
+    <!-- Datos en común -->
     <div class="form-group">
       <label for="nombre">Nombre:</label>
       <input type="text" id="nombre" formControlName="nombre" required>
@@ -25,12 +25,13 @@
       <input type="text" id="apellido" formControlName="apellido" required>
     </div>
 
+    <!-- Datos para pacientes -->
     <div *ngIf="esPaciente()" class="form-group">
       <label for="tipoDocumento">Tipo de documento:</label>
       <select id="tipoDocumento" formControlName="tipoDocumento" required>
-        <option value="dni">DNI</option>
-        <option value="pasaporte">Pasaporte</option>
-        <!-- Agrega más opciones según tus necesidades -->
+        <option value="cedula">Cédula</option>
+        <option value="tarjetaIdentidad">Tarjeta de identidad</option>
+        <option value="pasaporte">Pasaporte</option>       
       </select>
     </div>
 
@@ -49,17 +50,23 @@
       <input type="number" id="edad" formControlName="edad" [readonly]="true">
     </div>
 
-    <div class="form-group">
+    <div *ngIf="esPaciente()" class="form-group">
       <label for="telefono">Teléfono o celular:</label>
       <input type="tel" id="telefono" formControlName="telefono" required>
     </div>
 
+    <!-- Datos para doctores -->
     <div *ngIf="esDoctor()" class="form-group">
       <label for="especializacion">Especialización:</label>
       <select id="especializacion" formControlName="especializacion" required>
         <option value="medicinaGeneral">Medicina General</option>
         <option value="cardiologia">Cardiología</option>
-        <!-- Agrega más opciones según tus necesidades -->
+        <option value="medicinaInterna">Medicina Interna</option>
+        <option value="dermatologia">Dermatología</option>
+        <option value="rehabilitacionFisica">Rehabilitación Física</option>
+        <option value="psicologia">Psicología</option>
+        <option value="odontologia">Odontología</option>
+        <option value="radiologia">Radiología</option>
       </select>
     </div>
 
@@ -70,9 +77,10 @@
 
     <div *ngIf="esDoctor()" class="form-group">
       <label for="correo">Correo:</label>
-      <input type="email" id="correo" formControlName="correo" required>
+      <input type="text" id="correo" formControlName="correo" pattern="[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}" required placeholder="ejemplo@gmail.com">
+      <small class="form-text text-muted" *ngIf="formulario.get('correo')?.errors?.['pattern']">Ingrese un correo electrónico válido.</small>
     </div>
 
-    <button type="submit">Registrarse</button>
+    <button class="register" type="submit">Registrarse</button>
   </form>
 </div>

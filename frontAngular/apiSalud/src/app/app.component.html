@@ -1,9 +1,9 @@
+<ng-container *ngIf="mostrarHeader">
 
-<app-headerp *ngIf="mostrarHeader">
+  <app-headerp *ngIf="mostrarHeader && tipoUsuario === 'paciente'"></app-headerp>
+  <app-headerd *ngIf="mostrarHeader && tipoUsuario === 'doctor'"></app-headerd>
 
-</app-headerp>
+</ng-container>
 
-<router-outlet>
-
-</router-outlet>
-
+<router-outlet></router-outlet>
+  
