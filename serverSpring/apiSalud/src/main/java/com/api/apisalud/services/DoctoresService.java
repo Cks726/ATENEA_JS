@@ -8,7 +8,9 @@ import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
 import java.util.Optional;
+import java.util.stream.Collectors;
 
 @Service
 public class DoctoresService {
@@ -29,5 +31,42 @@ public class DoctoresService {
         impleDoctorDao.save(doctor);
     }
 
+    //BUSCAR TODOS LOS DOCTORES
+    public List<DtoDoctorAll> findAll(){
+        List<Doctores> doctores = impleDoctorDao.findAll();
+        List<DtoDoctorAll> doctorAllList = doctores.stream()
+                .map(doctor -> modelMapper.map(doctor, DtoDoctorAll.class))
+                .collect(Collectors.toList());
+        return doctorAllList;
+    }
 
+    //BUSCAR TODOS DOCTORES POR ID
+    public DtoDoctor findById(Long cc){
+        Optional<Doctores> doctores = impleDoctorDao.findById(cc);
+        if (doctores.isEmpty()){
+            throw new RuntimeException("no existe doctor con esa cédula");
+        }
+        DtoDoctor dtoDoctor = modelMapper.map(doctores.get(), DtoDoctor.class);
+        return dtoDoctor;
+    }
+
+    //ACTUALIZAR DATOS DOCTOR
+    public void save (DtoDoctorAll dtoDoctorAll){
+        Doctores doctores = modelMapper.map(dtoDoctorAll, Doctores.class);
+        Optional<Doctores> doctorExiste = impleDoctorDao.findById(dtoDoctorAll.getCc());
+        if(doctorExiste.isEmpty()){
+            throw new RuntimeException("usuario ya existe, intente de nuevo");
+        }
+        impleDoctorDao.save(doctores);
+    } //va a ser un metodo void porque no necesito retornar al cliente la información que ya ingresó
+
+
+    // ELIMINAR UN DOCTOR
+    public void delete(Long cc){
+        Optional<Doctores> eliminarDoctor = impleDoctorDao.findById(cc);
+        if(eliminarDoctor.isEmpty()){
+            throw new RuntimeException("no se encuentra registro para eliminar");
+        }
+        impleDoctorDao.delete(eliminarDoctor.get());
+    }
 }

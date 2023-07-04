@@ -5,5 +5,6 @@ import org.springframework.data.jpa.repository.JpaRepository;
 
 
 
+
 public interface ImpleDoctorDao extends JpaRepository<Doctores, Long>{
 }

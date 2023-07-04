@@ -3,7 +3,6 @@ package com.api.apisalud.entities;
 import com.api.apisalud.utils.Especialidad;
 import jakarta.persistence.*;
 import lombok.Data;
-
 @Data
 @Entity
 public class Doctores{
@@ -23,4 +22,5 @@ public class Doctores{
 
     @Enumerated(EnumType.STRING)
     private Especialidad especialidad;
+
 }
