@@ -19,6 +19,15 @@
       </select>
     </div>
 
+    <div class="form-group">
+      <label for="especialidad">Doctor</label>
+      <select id="especialidad" name="especialidad" [(ngModel)]="especialidad" required>
+        <option>Wilson</option>
+        <option>Wilson</option>
+        <option>Wilson</option>
+      </select>
+    </div>
+
     <button type="submit">Agendar Cita</button>
   </form>
 
@@ -27,11 +36,12 @@
   <table>
     <thead>
       <tr>
+        <th>Id Paciente</th>
+        <th>Nombre paciente</th>
         <th>Id Cita</th>
         <th>Doctor</th>
         <th>Especialista</th>
         <th>Consultorio</th>
-        <th>Acciones</th>
       </tr>
     </thead>
     <tbody>
