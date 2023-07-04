@@ -14,7 +14,7 @@ export class CitaComponent {
   agregarCita() {
     const nuevaCita = {
       id: this.citas.length + 1,
-      doctor: 'Dr. Juan Pérez',
+      doctor: 'Dr. House',
       especialista: this.especialidad,
       consultorio: 'Consultorio 101'
     };
