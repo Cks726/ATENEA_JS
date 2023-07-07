@@ -1,25 +1,25 @@
-//import {BasicEspecialidades, Especialidad} from "./especialidad";
-//import {BasicPaciente, Paciente } from "./paciente";
-//import {Doctor} from "./doctor";
+import {BasicEspecialidades, Especialidad} from "./especialidad";
+import {BasicPaciente, Paciente } from "./paciente";
+import {Doctor} from "./doctor";
 
-export interface BasicCita{
-    Id_Cita: number
+export interface BasicCita extends BasicCitaModel{
+    id_cita: number
 }
 
 export interface Cita extends BasicCita{
-    Paciente_Id: Number,
-    Especialidad_Id: number
+    paciente_id?: Number,
+    especialidad_id?: number
 }
 
 
-/*
-export interface citaDetalles extends cita{
+export interface citaDetalles extends Cita{
     especialidad: Especialidad,
     paciente:Paciente,
-    doctor:Doctor
+    doctor?:Doctor;
 }
 
-export interface BasicCita {
-    especialidad : BasicEspecialidades,
-    paciente: BasicPaciente
-}*/
+export interface BasicCitaModel {
+    especialidad : BasicEspecialidades;
+    paciente: BasicPaciente;
+}
+

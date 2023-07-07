@@ -1,34 +1,4 @@
 "use strict";
-/*import * as dotenv from "dotenv";
-import express from "express";
-import * as bodyParser from "body-parser";
-import {citaRouter} from "./routes/citaRouter";
-import { pacienteRouter} from "./routes/pacienteRouter";
-import { db } from "./db";
-
-const app = express();
-dotenv.config();
-
-app.use(bodyParser.json());
-app.use("/crear", citaRouter);
-app.use("/nuevo", pacienteRouter)
-
-db.connect((err) => {
-    if(err){
-        console.log("Database connection error");
-    } else {
-        console.log("Database Conected");
-    }
-  });
-
-  
-  app.listen(process.env.PORT, () => {
-    console.log(`Node server started running`);
-    console.log(`Go to http://${process.env.DB_HOST}:${process.env.PORT}`)
-    console.log("Hostname",process.env.DB_HOST)
-    console.log("Port",process.env.PORT)
-  });
-*/
 var __createBinding = (this && this.__createBinding) || (Object.create ? (function(o, m, k, k2) {
     if (k2 === undefined) k2 = k;
     var desc = Object.getOwnPropertyDescriptor(m, k);
@@ -74,7 +44,7 @@ app.use((req, res, next) => {
     res.setHeader('Access-Control-Allow-Headers', 'Content-Type, Authorization');
     next();
 });
-app.use('/nuevo', pacienteRouter_1.pacienteRouter);
+app.use('/paciente', pacienteRouter_1.pacienteRouter);
 app.use('/especialidad', especialidadRouter_1.especialidadRouter);
 app.use('/doctor', doctorRouter_1.doctorRouter);
 app.use('/cita', citaRouter_1.citaRouter);

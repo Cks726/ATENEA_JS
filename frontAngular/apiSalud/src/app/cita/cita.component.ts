@@ -7,14 +7,17 @@ import { Component } from '@angular/core';
 })
 export class CitaComponent {
   numeroDocumento: string='';
+  paciente: string='';
   especialidad: string='';
   especialidades: string[] = ['Medicina general', 'Cardiología', 'Medicina interna', 'Dermatología', 'Rehabilitación física', 'Psicología', 'Odontología', 'Radiología'];
+  //doctor: string
   citas: any[] = [];
 
   agregarCita() {
     const nuevaCita = {
       id: this.citas.length + 1,
-      doctor: 'Dr. House',
+      idp: this.paciente,
+      doctor: 'Dr. Gregory House',
       especialista: this.especialidad,
       consultorio: 'Consultorio 101'
     };

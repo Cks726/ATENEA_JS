@@ -40,6 +40,7 @@ const express_1 = __importDefault(require("express"));
 const citaModel = __importStar(require("../controllers/cita"));
 const citaRouter = express_1.default.Router();
 exports.citaRouter = citaRouter;
+//Crea una cia nueva
 citaRouter.post("/", (req, res) => __awaiter(void 0, void 0, void 0, function* () {
     const newCita = req.body;
     citaModel.create(newCita, (err, Id_Cita) => {
@@ -49,11 +50,42 @@ citaRouter.post("/", (req, res) => __awaiter(void 0, void 0, void 0, function* (
         res.status(200).json({ "Id_Cita": Id_Cita });
     });
 }));
+//Ver todos los datos de la citas 
 citaRouter.get('/', (req, res) => __awaiter(void 0, void 0, void 0, function* () {
     return citaModel.findAll((err, cita) => {
         if (err) {
             return res.status(400).json({ 'error Message': err.message });
         }
         res.status(200).json({ 'data': cita });
+    });
+}));
+//Ver todos los datos de ina cita por id del paciente
+citaRouter.get('/:id', (req, res) => __awaiter(void 0, void 0, void 0, function* () {
+    const id_cita = Number(req.params.id);
+    citaModel.findOne(id_cita, (err, cita) => {
+        if (err) {
+            return res.status(500).json({ 'message': err.message });
+        }
+        res.status(200).json({ 'datos': cita });
+    });
+}));
+//Actualiza la cita a otra especialidad por id de paciente
+citaRouter.put('/:id', (req, res) => __awaiter(void 0, void 0, void 0, function* () {
+    const cita = req.body;
+    citaModel.update(cita, (err, numUpdate) => {
+        if (err) {
+            return res.status(500).json({ 'message': err.message });
+        }
+        res.status(200).json({ 'Datos actualizados': numUpdate });
+    });
+}));
+//Elimina la cita del paciente
+citaRouter.delete('/:id', (req, res) => __awaiter(void 0, void 0, void 0, function* () {
+    const id_cita = parseInt(req.params.id);
+    citaModel.remove(id_cita, (err, numDelete) => {
+        if (err) {
+            return res.status(500).json({ 'message': err.message });
+        }
+        res.status(200).json({ 'Tu cita fue eliminada corectamente': numDelete });
     });
 }));

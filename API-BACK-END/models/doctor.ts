@@ -1,11 +1,11 @@
 export interface BasicDoctor {
-    Id_Doctor : number
+    id_doctor?: number
 }
 
 export interface Doctor extends BasicDoctor {
     nombre: string,
     apellido: string,
-    Especialidad_Id: number,
+    especialidad_id?: number,
     consultorio: string,
     correo: string
 }

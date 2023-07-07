@@ -1,34 +1,3 @@
-/*import * as dotenv from "dotenv";
-import express from "express";
-import * as bodyParser from "body-parser";
-import {citaRouter} from "./routes/citaRouter";
-import { pacienteRouter} from "./routes/pacienteRouter";
-import { db } from "./db";
-
-const app = express();
-dotenv.config();
-
-app.use(bodyParser.json());
-app.use("/crear", citaRouter);
-app.use("/nuevo", pacienteRouter)
-
-db.connect((err) => {
-    if(err){
-        console.log("Database connection error");
-    } else {
-        console.log("Database Conected");
-    }
-  });
-
-  
-  app.listen(process.env.PORT, () => {
-    console.log(`Node server started running`);
-    console.log(`Go to http://${process.env.DB_HOST}:${process.env.PORT}`)
-    console.log("Hostname",process.env.DB_HOST)
-    console.log("Port",process.env.PORT)
-  });
-*/
-
 import * as dotenv from 'dotenv';
 import express from 'express';
 import * as bodyParser from 'body-parser';
@@ -51,7 +20,7 @@ app.use((req, res, next) => {
   next();
 });
 
-app.use('/nuevo', pacienteRouter);
+app.use('/paciente', pacienteRouter);
 app.use('/especialidad', especialidadRouter);
 app.use('/doctor', doctorRouter);
 app.use('/cita', citaRouter);

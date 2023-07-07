@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 
 @Component({
@@ -6,43 +6,31 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
   templateUrl: './formulario.component.html',
   styleUrls: ['./formulario.component.css']
 })
-
-
-export class FormularioComponent implements OnInit {
-  formulario: FormGroup;
+export class FormularioComponent {
+  formularioPaciente: FormGroup;
+  formularioDoctor: FormGroup;
   tipoPersona: string = 'paciente';
-  edad: number | undefined;
 
   constructor(private fb: FormBuilder) {
-    this.formulario = this.fb.group({
-      tipoPersona: ['paciente', Validators.required],
+    this.formularioPaciente = this.fb.group({
+      tipoDocumento: ['', Validators.required],
+      idPaciente: ['', [Validators.required, Validators.pattern('^[0-9]{1,20}$')]],
+      nombre:['', Validators.required],
+      apellido: ['', Validators.required],
+      edad: ['', Validators.required, Validators.pattern('^[0-200]{1,3}')],
+      telefono: ['', Validators.required]
+    });
 
+    this.formularioDoctor = this.fb.group({
+      idDoctor: ['', [Validators.required, Validators.pattern('^[0-9]{1,20}$')]],
       nombre: ['', Validators.required],
       apellido: ['', Validators.required],
-      tipoDocumento: [''],
-      numeroDocumento: [''],
-      fechaNacimiento: [''],
-      edad: [{ value: '', disabled: true }],
-      telefono: ['', Validators.required],
-      especializacion: ['medicinaGeneral'],
-      consultorio: [''],
+      especialidad: ['', Validators.required],
+      consultorio: ['', Validators.required],
       correo: ['', [Validators.required, Validators.pattern('[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}')]]
     });
   }
 
-  ngOnInit(): void {
-  }
-
-  onSubmit() {
-    if (this.esPaciente()) {
-      const fechaNacimiento = this.formulario.get('fechaNacimiento')?.value;
-      const edad = this.calcularEdad(fechaNacimiento);
-      this.formulario.get('edad')?.setValue(edad);
-    }
-
-    // Aquí puedes realizar la lógica correspondiente al enviar el formulario al back end
-    console.log(this.formulario.value);
-  }
 
   esPaciente() {
     return this.tipoPersona === 'paciente';
@@ -52,17 +40,17 @@ export class FormularioComponent implements OnInit {
     return this.tipoPersona === 'doctor';
   }
 
-  calcularEdad(fechaNacimiento: string) {
-    const fechaActual = new Date();
-    const fechaNac = new Date(fechaNacimiento);
-    let edad = fechaActual.getFullYear() - fechaNac.getFullYear();
-    const mesActual = fechaActual.getMonth();
-    const mesNac = fechaNac.getMonth();
-
-    if (mesActual < mesNac || (mesActual === mesNac && fechaActual.getDate() < fechaNac.getDate())) {
-      edad--;
+  submitPaciente() {
+    if (this.formularioPaciente.valid) {
+      // Lógica para registrar paciente
+      console.log(this.formularioPaciente.value);
     }
+  }
 
-    return edad;
+  submitDoctor() {
+    if (this.formularioDoctor.valid) {
+      // Lógica para registrar doctor
+console.log(this.formularioDoctor.value);
+    }
   }
 }

@@ -1,75 +1,71 @@
 *{
   font-family: monospace;
 }
-
-
-.container {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 98vh;
-  background-color: rgb(202, 209, 202);
+.regresar {
+  color: #008CBA;
+  text-decoration: none;
 }
 
+.container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.botonp, .botond {
+  padding: 10px 20px;
+  font-size: 16px;
+  border: none;
+  cursor: pointer;
+  color: #fff;
+}
+
+.botonp {
+  background-color: #333;
+}
+
+.botond {
+  background-color: #333;
+}
+
+.botonp.active, .botond.active {
+  background-color:  #4CAF50;
+}
+.botond.active, .botond.active{
+  background-color: #F29100;
+}
 
 .form {
-  width: 300px; 
+  margin-top: 20px;
+}
+
+.form h2 {
+  margin-top: 0;
 }
 
 .form-group {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
   margin-bottom: 15px;
 }
 
 .form-group label {
   display: block;
+  font-weight: bold;
   margin-bottom: 5px;
-  font-weight: bold;
 }
 
-.form-group input,
-.form-group select {
+.form-group input, .form-group select {
   width: 100%;
-  padding: 5px;
+  padding: 10px;
   font-size: 16px;
-  border-radius: 3px;
   border: 1px solid #ccc;
+  border-radius: 4px;
 }
 
-.form-group input[type="file"] {
-  padding: 0;
-}
-
-.form-group select {
-  height: 30px;
-}
-
-.form-group button {
-  flex: 1;
-  margin-left: 10px;
-  padding: 10px;
-  font-size: 16px;
-  font-weight: bold;
+.register {
+  background-color: #008CBA;
   color: #fff;
-  background-color: #007bff;
   border: none;
-  border-radius: 10px;
+  padding: 10px 20px;
+  font-size: 16px;
   cursor: pointer;
-}
-
-.form-group button:hover {
-  background-color: #0069d9;
-}
-
-.register{
-  padding: 10px;
-  border-radius: 20px;
-  border: none;
-  background-color: #4CAF50;
-  color: rgb(0, 0, 0);
-  font-size: 18px;
-  cursor: pointer;
-
 }
