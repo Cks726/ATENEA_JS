@@ -1,5 +1,5 @@
 export interface BasicPaciente {
-    Id_Paciente: number;
+    id_paciente: number;
 }
 
 export interface Paciente extends BasicPaciente {

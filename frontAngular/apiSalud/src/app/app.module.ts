@@ -2,6 +2,7 @@ import { NgModule, OnInit } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { RouterModule, Routes } from '@angular/router';
 import { FormsModule, ReactiveFormsModule} from '@angular/forms'
+import { HttpClientModule } from '@angular/common/http';
 
 
 import { AppComponent } from './app.component';
@@ -13,6 +14,7 @@ import { FormularioComponent } from './formulario/formulario.component';
 import { PerfildComponent } from './perfild/perfild.component';
 import { ErrorComponent } from './error/error.component';
 import { HeaderdComponent } from './headerd/headerd.component';
+import { RegistroComponent } from './registro/registro.component';
 
 
 const routes: Routes = [
@@ -22,7 +24,8 @@ const routes: Routes = [
   {path: 'cita', component:CitaComponent},
   {path: 'formulario', component:FormularioComponent},
   {path: 'perfild', component:PerfildComponent},
-  {path: 'error', component:ErrorComponent}
+  {path: 'error', component:ErrorComponent},
+  {path: 'registro', component: RegistroComponent }
 ]
 
 
@@ -34,12 +37,13 @@ const routes: Routes = [
     CitaComponent, 
     HeaderpComponent, 
     LoginComponent, 
-    FormularioComponent, PerfildComponent, ErrorComponent, HeaderdComponent
+    FormularioComponent, PerfildComponent, ErrorComponent, HeaderdComponent, RegistroComponent
   ],
   imports: [
     BrowserModule,
     FormsModule,
     ReactiveFormsModule,
+    HttpClientModule,
     RouterModule.forRoot(routes)
   ],
   providers: [],
