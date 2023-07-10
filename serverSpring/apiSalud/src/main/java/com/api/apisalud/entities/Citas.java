@@ -10,10 +10,11 @@ public class Citas {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-
+    @JoinColumn(name = "fk_pacientes")
     @ManyToOne
     private Pacientes pacientes;
 
+    @JoinColumn(name = "fk_doctores")
     @ManyToOne
     private Doctores doctores;
 

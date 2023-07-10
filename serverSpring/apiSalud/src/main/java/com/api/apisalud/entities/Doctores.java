@@ -8,11 +8,11 @@ import lombok.Data;
 public class Doctores{
     @Id
     @Column(name = "cc")
-    private long cc;
+    private Long cc;
     @Column(name = "name")
-    private String name;
+    private String nameDoctor;
     @Column(name = "lastname")
-    private String lastName;
+    private String lastNameDoctor;
 
     @Column(name = "consultorio")
     private String consultorio;

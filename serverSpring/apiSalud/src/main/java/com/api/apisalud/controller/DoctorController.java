@@ -35,20 +35,20 @@ public class DoctorController {
     }
 
     //BUSCAR TODOS LOS DOCTORES POR ID
-    @GetMapping ("/doctores/{id}")
+    @GetMapping ("/doctores/{cc}")
     public DtoDoctor mostrarPorId (@PathVariable long cc){
         return docService.findById(cc);
     }
 
     //ACTUALIZAR DOCTOR
-    @PutMapping("/doctores/{id}")
+    @PutMapping("/doctores/{cc}")
     public ResponseEntity<Void> updateDoctor(@PathVariable long cc, @RequestBody DtoDoctorAll dtoDoctorAll){
         docService.save(dtoDoctorAll);
         return ResponseEntity.ok().build();
     }
 
     //ELIMINAR DOCTOR
-    @DeleteMapping("/delete/{id}")
+    @DeleteMapping("/delete/{cc}")
     public ResponseEntity<Void> deleteDoctor(@PathVariable long cc){
         docService.delete(cc);
         return ResponseEntity.ok().build();
