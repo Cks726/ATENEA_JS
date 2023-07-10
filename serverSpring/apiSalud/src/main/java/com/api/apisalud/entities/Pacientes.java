@@ -14,14 +14,14 @@ public class Pacientes {
     @Column(name = "cc")
     private long cc;
     @Column(name = "name")
-    private String name;
+    private String namePaciente;
     @Column(name = "lastname")
-    private String lastName;
+    private String lastNamePaciente;
 
     @Column(name = "date")
     private Date date;
 
     @Column(name = "phone")
-    private String phone;
+    private String phonePaciente;
 
 }
