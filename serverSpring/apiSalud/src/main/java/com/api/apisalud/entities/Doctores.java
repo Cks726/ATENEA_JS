@@ -1,5 +1,6 @@
 package com.api.apisalud.entities;
 
+import com.api.apisalud.converter.EspecialidadConverter;
 import com.api.apisalud.utils.Especialidad;
 import jakarta.persistence.*;
 import lombok.Data;
@@ -20,7 +21,9 @@ public class Doctores{
     @Column(name = "email")
     private String email;
 
-    @Enumerated(EnumType.STRING)
-    private Especialidad especialidad;
 
+    @Column(columnDefinition = "VARCHAR(255)")
+    @Enumerated(EnumType.STRING)
+    @Convert(converter = EspecialidadConverter.class)
+    private Especialidad especialidad;
 }

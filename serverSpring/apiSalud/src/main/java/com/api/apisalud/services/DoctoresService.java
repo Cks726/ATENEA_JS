@@ -58,7 +58,7 @@ public class DoctoresService {
             throw new RuntimeException("usuario ya existe, intente de nuevo");
         }
         impleDoctorDao.save(doctores);
-    } //va a ser un metodo void porque no necesito retornar al cliente la información que ya ingresó
+    }
 
 
     // ELIMINAR UN DOCTOR

@@ -3,6 +3,7 @@ package com.api.apisalud.services;
 import com.api.apisalud.dto.DtoCitaEspecialidad;
 import com.api.apisalud.entities.Citas;
 import com.api.apisalud.entities.Doctores;
+import com.api.apisalud.entities.Pacientes;
 import com.api.apisalud.persistence.ImpleCitaDao;
 import com.api.apisalud.persistence.ImpleDoctorDao;
 import com.api.apisalud.persistence.ImplePacienteDao;
@@ -14,6 +15,7 @@ import org.springframework.stereotype.Service;
 import org.springframework.web.bind.annotation.RequestBody;
 
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 import java.util.stream.Collectors;
@@ -37,21 +39,38 @@ public class CitasService {
     public void crearCita(Citas citas) {
         Optional<Doctores> optionalDoctor = impleDoctorDao.findById(citas.getDoctores().getCc());
         Doctores doctor = optionalDoctor.orElseThrow(() -> new EntityNotFoundException("Doctor no encontrado"));
+
+        // Obtener el paciente existente de la base de datos
+        Optional<Pacientes> optionalPaciente = implePacienteDao.findById(citas.getPacientes().getCc());
+        Pacientes paciente = optionalPaciente.orElseThrow(() -> new EntityNotFoundException("Paciente no encontrado"));
+
+        // Asignar el paciente existente a la cita
+        citas.setPacientes(paciente);
         citas.setDoctores(doctor);
+
         impleCitaDao.save(citas);
     }
+
+
 
     //CONSULTAR CITAS POR ESPECIALIDAD
     public List<DtoCitaEspecialidad> getCitasByEspecialidad(String nombreEspecialidad) {
         Especialidad especialidad = Especialidad.valueOf(nombreEspecialidad.toUpperCase());
         List<Citas> citas = impleCitaDao.findByEspecialidad(especialidad);
-        List<DtoCitaEspecialidad> dtoCitaEspecialidad = citas.stream()
-                .map(cita -> modelMapper.map(cita, DtoCitaEspecialidad.class))
-                .collect(Collectors.toList());
+        List<DtoCitaEspecialidad> dtoCitaEspecialidad = new ArrayList<>();
+
+        for (Citas cita : citas) {
+            DtoCitaEspecialidad dtoCita = new DtoCitaEspecialidad();
+            dtoCita.setEspecialidad(cita.getEspecialidad());
+            dtoCita.setNamePaciente(cita.getPacientes().getNamePaciente());
+            dtoCita.setLastNamePaciente(cita.getPacientes().getLastNamePaciente());
+            dtoCita.setNameDoctor(cita.getDoctores().getNameDoctor());
+            dtoCita.setLastNameDoctor(cita.getDoctores().getLastNameDoctor());
+            dtoCita.setConsultorio(cita.getDoctores().getConsultorio());
+
+            dtoCitaEspecialidad.add(dtoCita);
+        }
 
         return dtoCitaEspecialidad;
     }
-
-
-
 }
