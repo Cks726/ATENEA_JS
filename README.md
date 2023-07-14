@@ -180,7 +180,8 @@ ACÁ COLOCAR IMAGEN O GIF
 <br>
 <br>
 <h2>CARPETA 2: client/medical-app FRONTEND CON ANGULAR</h2>
-ACÁ COLOCAR IMAGEN O GIF
+[![Alt text](https://img.youtube.com/vi/1ejb-blHjGE/0.jpg)]
+(https://www.youtube.com/watch?v=1ejb-blHjGE)
 <br>
 <br>
 <h2>CARPETA 3: frontAngular/apiSalud FRONTEND CON ANGULAR</h2>
