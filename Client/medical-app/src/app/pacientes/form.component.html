@@ -1,0 +1,28 @@
+<form (ngSubmit)="crearPaciente()">
+    <div>
+        <div class="form-row">
+            <div class="form-group col-md-3">
+                <label for="name">Nombre</label>
+                <input type="name" class="form-control" [(ngModel)] ="paciente.namePaciente" id="name" name="name">
+            </div>
+            <div class="form-group col-md-3">
+                <label for="lastName">Apellido</label>
+                <input type="name" class="form-control" [(ngModel)] ="paciente.lastNamePaciente" id="lastName" name="lastName">
+            </div>
+            <div class="form-group col-md-3">
+                <label for="cc">Cédula de ciudadanía</label>
+                <input type="cc" class="form-control" [(ngModel)] ="paciente.cc" id="cc" name="cc">
+            </div>
+            <div class="form-group col-md-3">
+                <label for="date">Fecha de nacimiento</label>
+                <input type="date" class="form-control" [(ngModel)] ="paciente.cumple" id="date" name="date">
+            </div>
+            <div class="form-group col-md-3">
+                <label for="phone">Teléfono</label>
+                <input type="phone" class="form-control" [(ngModel)] ="paciente.phonePaciente" id="phone" name="phone">
+            </div>
+        </div>
+    </div>
+    <button type="submit" class="btn btn-primary" role="button">guargar paciente</button>
+  </form>
+
