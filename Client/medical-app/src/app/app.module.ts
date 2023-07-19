@@ -21,7 +21,7 @@ const routes: Routes = [
   {path: 'pacientes', component: PacientesComponent},
   {path: 'doctores', component: DoctoresComponent},
   {path: 'citaMedica', component: CitasComponent},
-  //{path: 'paciente/created', component: FormComponent},
+  {path: 'paciente/create', component: FormComponent},
 ]
 
 @NgModule({

@@ -17,8 +17,11 @@ export class PacientesComponent implements OnInit {
     this.obtenerPacientes();
   }
 
+
+
+//POST
   async obtenerPacientes(): Promise<Paciente[]> {
-    this.pacientes= await this.pacienteService.obtenerPacientes();
+    this.pacientes = await this.pacienteService.obtenerPacientes();
     return this.pacientes;
   }
 }

@@ -61,16 +61,18 @@ Adicional a ello, se pueden crear citas digitando la cédula del paciente y a tr
 <h2>CARPETA 1: API-BACK-END CON TYPESCRIPT - BASE DE DATOS: MYSQL</h2>
 <br>
 <h3>:stethoscope:DOCTORES</h3>
-<ul>
-	<li>:crayon: Funcionalidad 1: Guardar datos de los doctores en un formulario</li>
-	ACÁ COLOCAR IMAGEN O GIF
-	<li>:crayon: Funcionalidad 2: Listar datos de los doctores</li>
-	ACÁ COLOCAR IMAGEN O GIF
-	<li>:crayon: Funcionalidad 3: Actualizar datos de los doctores</li>
-	ACÁ COLOCAR IMAGEN O GIF
-	<li>:crayon: Funcionalidad 4: Eliminar datos de los doctores</li>
-ACÁ COLOCAR IMAGEN O GIF
-</ul>
+- :crayon: Funcionalidad 1: Guardar datos de los doctores en un formulario
+  ![Imagen 1](proyectoJS\recursos\apiSalud\crearDoctor.gif)
+
+- :crayon: Funcionalidad 2: Listar datos de los doctores
+  ![Imagen 2](ruta/imagen2.gif)
+
+- :crayon: Funcionalidad 3: Actualizar datos de los doctores
+  ![Imagen 3](ruta/imagen3.gif)
+
+- :crayon: Funcionalidad 4: Eliminar datos de los doctores
+  ![Imagen 4](ruta/imagen4.gif)
+
 
 
 <h3>:link:ENDPOINTS PARA PRUEBAS</h3>

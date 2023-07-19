@@ -22,10 +22,19 @@ export class PacienteService{
 
     //CREAR CLIENTE
     async crearPaciente(newPaciente: Paciente) {
-        const pacienteCreado = await lastValueFrom(this.http.post<Paciente[]>(this.urlEndPoint+'/create', newPaciente).pipe(map((response) => response)));
-        this.edited$.next(pacienteCreado);
-        return this.updatePacientesTable();
-    }
+// Verificar que los campos no estén en blanco o sean nulos
+if (!newPaciente.namePaciente || !newPaciente.lastNamePaciente || !newPaciente.cc || !newPaciente.cumple || !newPaciente.age || !newPaciente.phonePaciente) {
+    throw new Error("Todos los campos son obligatorios");
+  }
+
+  // Aquí puedes agregar otras validaciones específicas según tus requisitos
+
+  return lastValueFrom(
+    this.http.post<Paciente[]>(this.urlEndPoint + '/create', newPaciente).pipe(
+      map((response) => response)
+    )
+  );
+      }
 
     //OBTENER PACIENTES
     obtenerPacientes() {

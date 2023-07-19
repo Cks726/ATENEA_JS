@@ -2,15 +2,12 @@ package com.api.apisalud.controller;
 
 import com.api.apisalud.dto.DtoCitaEspecialidad;
 import com.api.apisalud.entities.Citas;
-import com.api.apisalud.entities.Doctores;
-import com.api.apisalud.persistence.ImpleCitaDao;
 import com.api.apisalud.services.CitasService;
 import com.api.apisalud.utils.Especialidad;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
-import java.util.Collections;
 import java.util.List;
 @RestController
 @RequestMapping("/citas")
