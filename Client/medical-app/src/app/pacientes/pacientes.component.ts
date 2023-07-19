@@ -1,13 +1,24 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { Paciente } from './paciente';
-@Component({
-  selector: 'formulario-pacientes',
-  templateUrl: './pacientes.component.html',
-  styleUrls: ['./pacientes.component.css']
-})
-export class PacientesComponent {
-  pacientes: Paciente[] = [
-{    nombre: 'natalia', apellido: 'mayor', cedula: '123', fecha_nacimiento: '5214', telefono: '666666'}
-  ]
+import { PacienteService } from './paciente.service';
 
+@Component({
+  selector: 'app-pacientes',
+  templateUrl: './pacientes.component.html',
+})
+
+export class PacientesComponent implements OnInit {
+
+  pacientes: Paciente[];
+
+  constructor(private pacienteService: PacienteService) { }
+
+  ngOnInit() {
+    this.obtenerPacientes();
+  }
+
+  async obtenerPacientes(): Promise<Paciente[]> {
+    this.pacientes= await this.pacienteService.obtenerPacientes();
+    return this.pacientes;
+  }
 }
