@@ -15,7 +15,11 @@
             </div>
             <div class="form-group col-md-3">
                 <label for="date">Fecha de nacimiento</label>
-                <input type="date" class="form-control" [(ngModel)] ="paciente.cumple" id="date" name="date">
+                <input type="date" class="form-control" [(ngModel)] ="paciente.cumple" id="date" name="date" (change)="calcularEdad()" >
+            </div>
+            <div class="form-group col-md-3">
+                <label for="date">Edad</label>
+                <input type="age" class="form-control" [(ngModel)] ="paciente.age" id="age" name="age">
             </div>
             <div class="form-group col-md-3">
                 <label for="phone">Teléfono</label>

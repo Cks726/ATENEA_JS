@@ -1,7 +1,5 @@
 package com.api.apisalud.controller;
 
-import com.api.apisalud.dto.DtoDoctor;
-import com.api.apisalud.dto.DtoDoctorAll;
 import com.api.apisalud.entities.Pacientes;
 import com.api.apisalud.services.PacienteService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -9,7 +7,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
-
+@CrossOrigin(origins = {"http://localhost:4200"})
 @RestController
 @RequestMapping("/paciente")
 public class PacienteController {
@@ -18,7 +16,7 @@ public class PacienteController {
     PacienteService pacienteService;
 
     //CREAR PACIENTE
-    @PostMapping("/created")
+    @PostMapping("/create")
     public ResponseEntity<Void> createPaciente(@RequestBody Pacientes paciente){
         pacienteService.newPaciente(paciente);
         return ResponseEntity.status(201).build();
@@ -31,7 +29,7 @@ public class PacienteController {
         return ResponseEntity.ok(paciente);
     }
 
-    //BUSCAR TODOS LOS DOCTORES POR ID
+    //BUSCAR TODOS LOS PACIENTES POR ID
     @GetMapping ("/pacientes/{cc}")
     public Pacientes mostrarPorIdPaciente (@PathVariable long cc){
         return pacienteService.findPacienteById(cc);
