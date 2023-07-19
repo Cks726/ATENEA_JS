@@ -15,7 +15,14 @@ Adicional a ello, se pueden crear citas digitando la cédula del paciente y a tr
 <h3>PARA REALIZACIÓN DE BACKEND:</h3>
 
  <h4>:heavy_check_mark: Springboot</h4>
+ <br>
+
  <h4>:heavy_check_mark: Typescript</h4>
+ <h4>:heavy_check_mark: nodeJS</h4>
+<h4>:heavy_check_mark: express</h4>
+<h4>:heavy_check_mark: nodemon</h4>
+<h4>:heavy_check_mark: dotenv</h4>
+
  <br>
  <h3>PARA REALIZACIÓN DE FRONTEND:</h3>
  <h4>:heavy_check_mark: Angular</h4>
@@ -48,7 +55,8 @@ Adicional a ello, se pueden crear citas digitando la cédula del paciente y a tr
 	  <li>  <h4>Logramos codificar las DOS APIS que solicita el curso, cumpliendo con los requerimiento establecidos, usando como lenguajes, para estos backend: CARPETA 1 typescript  Y CARPETA 5 springboot. :white_check_mark: </h4></li>
 	  <li>  <h4>De forma ambiciosa nos arriesgamos a realizar DOS FRONTEND usando angular como framework para cada una de las APIS DESARROLLADAS: se pueden visualizar en CARPETA 2 Y CARPETA 3 :white_check_mark:</h4></li>
 	 <li>  <h4>En la búsqueda de poner en uso todos los conocimientos, decidimos dejar el desarrollo de la CARPETA 4 en construcción, usando como base de datos mongo db y javascript construcción:hammer_and_wrench:</h4></li>
-  	<li>  <h4>En este momento faltó la implementación del cors para frontend y backend, sin embargo presentamos todo el trabajo como parte de nuestro compromiso por el aprendizaje de varias herramientas de programación:white_check_mark:</h4></li>
+  	<li>  <h4>Se logró crear el cors de la mayoría de funcionalidades entre el backend de la CARPETA 1 y el frontend de la CARPETA 3:white_check_mark:</h4></li>
+	  	<li>  <h4>Se logró integrar el cors para todas las funcionalidades de pacientes del backend de la CARPETA 5 con el frontend de la CARPETA 2:hammer_and_wrench:</h4></li>
 
  </ul>
 
@@ -61,81 +69,94 @@ Adicional a ello, se pueden crear citas digitando la cédula del paciente y a tr
 <h2>CARPETA 1: API-BACK-END CON TYPESCRIPT - BASE DE DATOS: MYSQL</h2>
 <br>
 <h3>:stethoscope:DOCTORES</h3>
+
 - :crayon: Funcionalidad 1: Guardar datos de los doctores en un formulario
-  ![Imagen 1](proyectoJS\recursos\apiSalud\crearDoctor.gif)
+  ![Imagen 1](https://github.com/Cks726/ATENEA_JS/blob/main/recursos/apiSalud/gif/crearDoctor.gif)
 
 - :crayon: Funcionalidad 2: Listar datos de los doctores
-  ![Imagen 2](ruta/imagen2.gif)
+  ![Imagen 2](https://github.com/Cks726/ATENEA_JS/blob/main/recursos/apiSalud/gif/frontGetDocPac.gif)
 
 - :crayon: Funcionalidad 3: Actualizar datos de los doctores
-  ![Imagen 3](ruta/imagen3.gif)
+  ![Imagen 3](https://github.com/Cks726/ATENEA_JS/blob/main/recursos/apiSalud/gif/updateDoctor.gif)
 
 - :crayon: Funcionalidad 4: Eliminar datos de los doctores
-  ![Imagen 4](ruta/imagen4.gif)
+  ![Imagen 4](https://github.com/Cks726/ATENEA_JS/blob/main/recursos/apiSalud/gif/deleteDoctor.gif)
 
 
 
 <h3>:link:ENDPOINTS PARA PRUEBAS</h3>
  <ul>
-	<li>  <h4> :link: PARA CREAR DOCTOR:   </h4></li>
-  	<li>  <h4> :link: PARA LISTAR DOCTORES:   </h4></li>
-	<li>  <h4> :link: PARA ACTUALIZAR DOCTOR:   </h4></li>
-  	<li>  <h4> :link: PARA ELIMINAR DOCTOR:   </h4></li>
+	<li>  <h4> :link: PARA CREAR DOCTOR: http://127.0.0.1:3000/doctor  </h4></li>
+  	<li>  <h4> :link: PARA LISTAR DOCTORES: http://127.0.0.1:3000/doctor  </h4></li>
+	<li>  <h4> :link: PARA ACTUALIZAR DOCTOR: http://127.0.0.1:3000/doctor/id_doctor  </h4></li>
+  	<li>  <h4> :link: PARA ELIMINAR DOCTOR: http://127.0.0.1:3000/doctor/id  </h4></li>
  </ul>
 <br>
 
 <h2>:adhesive_bandage:PACIENTES</h2>
-<ul>
-	<li>:crayon: Funcionalidad 1: Guardar datos de los pacientes en un formulario</li>
-	ACÁ COLOCAR IMAGEN O GIF
-	<li>:crayon: Funcionalidad 2: Listar datos de los pacientes</li>
-	ACÁ COLOCAR IMAGEN O GIF
-	<li>:crayon: Funcionalidad 3: Actualizar datos de los pacientes</li>
-	ACÁ COLOCAR IMAGEN O GIF
-	<li>:crayon: Funcionalidad 4: Eliminar datos de los pacientes</li>
- 
-</ul>
+
+- :crayon: Funcionalidad 1: Guardar datos de los pacientes en un formulario
+  ![Imagen 1](https://github.com/Cks726/ATENEA_JS/blob/main/recursos/apiSalud/gif/crearPaciente.gif)
+
+- :crayon: Funcionalidad 2: Listar datos de los pacientes
+  ![Imagen 2](https://github.com/Cks726/ATENEA_JS/blob/main/recursos/apiSalud/gif/frontGetDocPac.gif)
+
+- :crayon: Funcionalidad 3: Actualizar datos de los pacientes
+  ![Imagen 3](https://github.com/Cks726/ATENEA_JS/blob/main/recursos/apiSalud/gif/updatePaciente.gif)
+
+- :crayon: Funcionalidad 4: Eliminar datos de los pacientes
+  ![Imagen 4](https://github.com/Cks726/ATENEA_JS/blob/main/recursos/apiSalud/gif/deletePaciente.gif)
+
 
 
 <h2>:link:ENDPOINTS PARA PRUEBAS</h2>
  <ul>
-	<li>  <h4> :link: PARA CREAR PACIENTE:   </h4></li>
-  	<li>  <h4> :link: PARA LISTAR PACIENTE:   </h4></li>
-	<li>  <h4> :link: PARA ACTUALIZAR PACIENTE:   </h4></li>
-  	<li>  <h4> :link: PARA ELIMINAR PACIENTE:   </h4></li>
+	<li>  <h4> :link: PARA CREAR PACIENTE: http://127.0.0.1:3000/paciente  </h4></li>
+  	<li>  <h4> :link: PARA LISTAR PACIENTE: http://127.0.0.1:3000/paciente   </h4></li>
+	<li>  <h4> :link: PARA ACTUALIZAR PACIENTE: http://127.0.0.1:3000/paciente/id_paciente  </h4></li>
+  	<li>  <h4> :link: PARA ELIMINAR PACIENTE: http://127.0.0.1:3000/paciente/id  </h4></li>
  </ul>
 <br>
 <h2>:syringe:CITAS</h2>
-<ul>
-	<li>:crayon: Funcionalidad 1: Crear citas</li>
-	ACÁ COLOCAR IMAGEN O GIF
-	<li>:crayon: Funcionalidad 2: Listar citas con paciente y doctor</li>
-	ACÁ COLOCAR IMAGEN O GIF
-</ul>
+
+- :crayon: Funcionalidad 1: Crear citas
+  ![Imagen 1](https://github.com/Cks726/ATENEA_JS/blob/main/recursos/apiSalud/gif/crearCita.gif)
+
+- :crayon: Funcionalidad 2: actualizar citas 
+  ![Imagen 2](https://github.com/Cks726/ATENEA_JS/blob/main/recursos/apiSalud/gif/updateCita.gif)
+
+- :crayon: Funcionalidad 3: eliminar citas 
+  ![Imagen 2](https://github.com/Cks726/ATENEA_JS/blob/main/recursos/apiSalud/gif/deleteCita.gif)
 
 
 
 <h2>:link:ENDPOINTS PARA PRUEBAS</h2>
  <ul>
-	<li>  <h4> :link: PARA CREAR CITA:   </h4></li>
-  	<li>  <h4> :link: PARA ELIMINAR CITA:   </h4></li>
+	<li>  <h4> :link: PARA CREAR CITA: http://127.0.0.1:3000/cita  </h4></li>
+  	<li>  <h4> :link: PARA LISTAR CITA: http://127.0.0.1:3000/cita  </h4></li>
+	<li>  <h4> :link: PARA ACTUALIZAR CITA: http://127.0.0.1:3000/cita  </h4></li>
+	<li>  <h4> :link: PARA ELIMINAR CITA: http://127.0.0.1:3000/cita/id </h4></li>
  </ul>
+
 <br>
 <br>
 
 <h2>CARPETA 5: serverSpring/apiSalud CON SPRINGBOOT - BASE DE DATOS: MYSQL</h2>
 <br>
 <h3>:stethoscope:DOCTORES</h3>
-<ul>
-	<li>:crayon: Funcionalidad 1: Guardar datos de los doctores en un formulario</li>
-	ACÁ COLOCAR IMAGEN O GIF
-	<li>:crayon: Funcionalidad 2: Listar datos de los doctores</li>
-	ACÁ COLOCAR IMAGEN O GIF
-	<li>:crayon: Funcionalidad 3: Validaciones de registro de doctor si ya existe, no puede realizar nuevo registro</li>
-	ACÁ COLOCAR IMAGEN O GIF
-	<li>:crayon: Funcionalidad 4: Listar doctores por id</li>
-	ACÁ COLOCAR IMAGEN O GIF
-</ul>
+
+- :crayon: Funcionalidad 1: Guardar datos de los doctores en un formulario
+  ![Imagen 1](https://github.com/Cks726/ATENEA_JS/blob/main/recursos/medical-app/crear_doc.gif)
+
+- :crayon: Funcionalidad 2: Listar datos de los doctores
+  ![Imagen 2](https://github.com/Cks726/ATENEA_JS/blob/main/recursos/medical-app/listar_todos_doc.gif)
+
+- :crayon: Funcionalidad 3: Validaciones de registro de doctor si ya existe, no puede realizar nuevo registro
+  ![Imagen 3](https://github.com/Cks726/ATENEA_JS/blob/main/recursos/medical-app/erro_doc_repetido.gif)
+
+- :crayon: Funcionalidad 4: Listar doctores por id
+  ![Imagen 4](https://github.com/Cks726/ATENEA_JS/blob/main/recursos/medical-app/buscar__doc_id.gif)
+
 
 
 
@@ -147,31 +168,34 @@ Adicional a ello, se pueden crear citas digitando la cédula del paciente y a tr
  </ul>
 <br>
 <h3>:adhesive_bandage:PACIENTES</h3>
-<ul>
-	<li>:crayon: Funcionalidad 1: Guardar datos de los pacientes en un formulario</li>
-	ACÁ COLOCAR IMAGEN O GIF
-	<li>:crayon: Funcionalidad 2: Listar datos de los pacientes</li>
-	ACÁ COLOCAR IMAGEN O GIF
-	<li>:crayon: Funcionalidad 3: Validaciones de registro de paciente si ya existe, no puede realizar nuevo registro</li>
-	ACÁ COLOCAR IMAGEN O GIF
-</ul>
+
+- :crayon: Funcionalidad 1: Guardar datos de los pacientes en un formulario
+  ![Imagen 1](https://github.com/Cks726/ATENEA_JS/blob/main/recursos/medical-app/crear_pac.gif)
+
+- :crayon: Funcionalidad 2: Listar datos de los pacientes
+  ![Imagen 2](https://github.com/Cks726/ATENEA_JS/blob/main/recursos/medical-app/listar_pac.gif)
+
+- :crayon: Funcionalidad 3: Validaciones de registro de paciente si ya existe, no puede realizar nuevo registro
+  ![Imagen 3](https://github.com/Cks726/ATENEA_JS/blob/main/recursos/medical-app/erro_pas_repetido.gif)
+
+  - :crayon: Funcionalidad 3: Validaciones de registro de paciente por id
+  ![Imagen 3](https://github.com/Cks726/ATENEA_JS/blob/main/recursos/medical-app/buscar_pac_id.gif)
 
 <h2>:link:ENDPOINTS PARA PRUEBAS</h2>
  <ul>
 	<li>  <h4> :link: PARA CREAR PACIENTE: http://localhost:8080/paciente/created </h4></li>
-  	<li>  <h4> :link: PARA LISTAR PACIENTE: http://localhost:8080/paciente/search  </h4></li>
+  	<li>  <h4> :link: PARA LISTAR TODOS LOS PACIENTES: http://localhost:8080/paciente/search  </h4></li>
 	<li>  <h4> :link: PARA LISTAR PACIENTE POR ID: http://localhost:8080/paciente/pacientes/{id}</h4></li>
  </ul>
 <br>
 <h3>:syringe:CITAS</h3>
 
-<ul>
-	<li>:crayon: Crear citas</li>
-	ACÁ COLOCAR IMAGEN O GIF
-	<li>:crayon: Funcionalidad 2: Listar citas con paciente y doctor por especialidad</li>
-	ACÁ COLOCAR IMAGEN O GIF
+- :crayon: Crear citas
+  ![Imagen 1](https://github.com/Cks726/ATENEA_JS/blob/main/recursos/medical-app/crear_cita.gif)
 
-</ul>
+- :crayon: Funcionalidad 2: Listar citas con paciente y doctor por especialidad
+  ![Imagen 2](https://github.com/Cks726/ATENEA_JS/blob/main/recursos/medical-app/traer_cita.gif)
+
 
 <h2>:link:ENDPOINTS PARA PRUEBAS</h2>
  <ul>
@@ -186,14 +210,16 @@ https://www.youtube.com/watch?v=1ejb-blHjGE
 <br>
 <br>
 <h2>CARPETA 3: frontAngular/apiSalud FRONTEND CON ANGULAR</h2>
-ACÁ COLOCAR IMAGEN O GIF
 
+![Imagen 1](https://github.com/Cks726/ATENEA_JS/blob/main/recursos/apiSalud/gif/frontCrearDoctor.gif)
+
+![Imagen 2](https://github.com/Cks726/ATENEA_JS/blob/main/recursos/apiSalud/gif/frontCrearPaciente.gif)
 
 *[DESARROLLADORES DEL PROYECTO](#DESARROLLADORES-DEL-PROYECTO)
 
 
 <h3>:computer:Wilson Serrato Garzón</h3>
-<h3>:computer:Cristian Camilo</h3>
+<h3>:computer:Cristian Camilo Soto</h3>
 <h3>:computer:Natalia Mayorquin Duran</h3>
 
 
