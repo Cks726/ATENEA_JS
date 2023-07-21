@@ -1,31 +1,28 @@
-import { NgModule, OnInit } from '@angular/core';
+import { CommonModule } from '@angular/common';
+import { HttpClientModule } from '@angular/common/http';
+import { NgModule } from '@angular/core';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { BrowserModule } from '@angular/platform-browser';
 import { RouterModule, Routes } from '@angular/router';
-import { FormsModule, ReactiveFormsModule} from '@angular/forms'
-import { HttpClientModule } from '@angular/common/http';
-
 
 import { AppComponent } from './app.component';
-import { PerfilpComponent } from './perfilp/perfilp.component';
 import { CitaComponent } from './cita/cita.component';
+import { ErrorComponent } from './error/error.component';
+import { FormularioComponent } from './formulario/formulario.component';
 import { HeaderpComponent } from './headerp/headerp.component';
 import { LoginComponent } from './login/login.component';
-import { FormularioComponent } from './formulario/formulario.component';
 import { PerfildComponent } from './perfild/perfild.component';
-import { ErrorComponent } from './error/error.component';
-import { HeaderdComponent } from './headerd/headerd.component';
-import { RegistroComponent } from './registro/registro.component';
+import { PerfilpComponent } from './perfilp/perfilp.component';
 
 
 const routes: Routes = [
   {path: '', redirectTo: '/login', pathMatch: 'full'},
   {path: 'login', component:LoginComponent},
-  {path: 'perfilp',component:PerfilpComponent },
+  {path: 'perfilp/:idPaciente',component:PerfilpComponent },
   {path: 'cita', component:CitaComponent},
   {path: 'formulario', component:FormularioComponent},
-  {path: 'perfild', component:PerfildComponent},
+  {path: 'perfild/:idDoctor', component:PerfildComponent},
   {path: 'error', component:ErrorComponent},
-  {path: 'registro', component: RegistroComponent }
 ]
 
 
@@ -37,9 +34,12 @@ const routes: Routes = [
     CitaComponent, 
     HeaderpComponent, 
     LoginComponent, 
-    FormularioComponent, PerfildComponent, ErrorComponent, HeaderdComponent, RegistroComponent
+    FormularioComponent, 
+    PerfildComponent, 
+    ErrorComponent, 
   ],
   imports: [
+    CommonModule,
     BrowserModule,
     FormsModule,
     ReactiveFormsModule,

@@ -1,23 +1,26 @@
 <a href="/login" class="regresar">Regresar</a>
 <div class="container">
+  <h2>Registrarse como</h2>
     <button class="botonp" type="button" (click)="tipoPersona = 'paciente'" [class.active]="tipoPersona === 'paciente'">Paciente</button>
     <button class="botond" type="button" (click)="tipoPersona = 'doctor'" [class.active]="tipoPersona === 'doctor'">Doctor</button>
   
     <form class="form" *ngIf="esPaciente()" [formGroup]="formularioPaciente" (ngSubmit)="submitPaciente()">
+
+      <!--Formulario para paciente-->
       <h2>Formulario de Paciente</h2>
       <div class="form-group">
-        <label for="tipoDocumento">Tipo de documento:</label>
-        <select id="tipoDocumento" formControlName="tipoDocumento" required>
-          <option value="" disabled selected>Seleccione un tipo de documento</option>
-          <option value="cedula">Cédula</option>
-          <option value="tarjetaIdentidad">Tarjeta de identidad</option>
-          <option value="pasaporte">Pasaporte</option>
+        <label >Tipo de documento:</label>
+        <select>
+          <option>Seleccione un tipo de documento</option>
+          <option>Cédula</option>
+          <option>Tarjeta de identidad</option>
+          <option>Pasaporte</option>
         </select>
       </div>
 
       <div class="form-group">
-        <label for="idPaciente">Número de documento:</label>
-        <input type="number" id="idPaciente" formControlName="idPaciente" required>
+        <label for="id_daciente">Número de documento:</label>
+        <input type="number" id="id_daciente" formControlName="id_paciente" required>
       </div>
 
       <div class="form-group">
@@ -43,11 +46,13 @@
       <button class="register" type="submit">Registrar Paciente</button>
     </form>
 
+    <!--Formulario para doctor-->
+
     <form class="form" *ngIf="esDoctor()" [formGroup]="formularioDoctor" (ngSubmit)="submitDoctor()">
       <h2>Formulario de Doctor</h2>
       <div class="form-group">
-        <label for="idDoctor">Número de documento:</label>
-        <input type="number" id="idDoctor" formControlName="idDoctor" required>
+        <label for="id_doctor">Número de documento:</label>
+        <input type="number" id="id_doctor" formControlName="id_doctor" required>
       </div>
 
       <div class="form-group">
@@ -62,18 +67,19 @@
 
       <div class="form-group">
         <label for="especialidad">Especialidad:</label>
-        <select id="especialidad" formControlName="especialidad" required>
-          <option value="" disabled selected>Seleccione una especialidad</option>
-          <option value="medicinaGeneral">Medicina General</option>
-          <option value="cardiologia">Cardiología</option>
-          <option value="medicinaInterna">Medicina Interna</option>
-          <option value="dermatologia">Dermatología</option>
-          <option value="rehabilitacionFisica">Rehabilitación Física</option>
-          <option value="psicologia">Psicología</option>
-          <option value="odontologia">Odontología</option>
-          <option value="radiologia">Radiología</option>
+        <select id="especialidad" formControlName="especialidad_id" required>
+          <option value="" disabled selected>Seleccione tu especialidad</option>
+          <option [value]="1">Medicina General</option>
+          <option [value]="2">Cardiología</option>
+          <option [value]="3">Medicina Interna</option>
+          <option [value]="4">Dermatología</option>
+          <option [value]="5">Rehabilitación Física</option>
+          <option [value]="6">Psicología</option>
+          <option [value]="7">Odontología</option>
+          <option [value]="8">Radiología</option>
         </select>
       </div>
+      
 
       <div class="form-group">
         <label for="consultorio">Consultorio:</label>

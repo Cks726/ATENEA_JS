@@ -1,47 +1,47 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { HttpClient } from '@angular/common/http';
+import { ActivatedRoute } from '@angular/router';
+
+interface Paciente {
+  id_paciente: 0;
+  nombre: '';
+  apellido: '';
+  edad: 0;
+  telefono: '';
+}
 
 @Component({
   selector: 'app-perfilp',
   templateUrl: './perfilp.component.html',
   styleUrls: ['./perfilp.component.css']
 })
-export class PerfilpComponent {
-  nombre: string = "";
-  cedula: string = "";
-  apellido: string = "";
-  edad: number = 0;
-  telefono: string = "";
-  editar: boolean = false;
+export class PerfilpComponent implements OnInit {
+  paciente!: Paciente;
+  idPaciente: string= ''
 
-  editarPerfil() {
-    this.editar = true;
+  constructor(
+    private http: HttpClient,
+    private route: ActivatedRoute) { }
+
+
+      ngOnInit() {
+    this.route.params.subscribe(params => {
+      this.idPaciente = params['idPaciente'];
+
+      this.obtenerDatosPaciente();
+    });
   }
 
-  guardarPerfil() {
-    // Aquí se realizaría la lógica para guardar el perfil actualizado en el backend
-    this.editar = false;
-  }
-
-  eliminarPerfil() {
-    // Aquí se realizaría la lógica para eliminar el perfil en el backend
-    // y redirigir al usuario a la página de inicio o a otro componente
-    console.log('Perfil eliminado');
-  }
-}
-
-export class LoginComponent {
-  usuario: string ='';
-  contrasena: string ='';
-  recordarContrasena: boolean = false;
-
-  constructor() {
-    // Puedes realizar otras acciones en el constructor si es necesario
-    // Aquí asignamos el valor predeterminado a recordarContrasena
-    this.recordarContrasena = false;
-  }
-
-  iniciarSesion() {
-    // Lógica para iniciar sesión
-    console.log('Iniciar sesión');
+  obtenerDatosPaciente() {
+    this.http.get<any>(`http://127.0.0.1:3000/paciente/${this.idPaciente}`).subscribe(
+      response => {
+        this.paciente = response['Datos del paciente'];
+        console.log('Datos del paciente:', this.paciente);
+      },
+      error => {
+        console.log('Error al obtener los datos del paciente', error);
+      }
+    );
   }
 }
+

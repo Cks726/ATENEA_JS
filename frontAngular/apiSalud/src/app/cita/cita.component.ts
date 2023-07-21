@@ -1,3 +1,4 @@
+import { Location } from '@angular/common';
 import { Component } from '@angular/core';
 
 @Component({
@@ -12,6 +13,12 @@ export class CitaComponent {
   especialidades: string[] = ['Medicina general', 'Cardiología', 'Medicina interna', 'Dermatología', 'Rehabilitación física', 'Psicología', 'Odontología', 'Radiología'];
   //doctor: string
   citas: any[] = [];
+
+constructor(private location: Location) { }
+
+  goBack(): void {
+    this.location.back();
+  }
 
   agregarCita() {
     const nuevaCita = {

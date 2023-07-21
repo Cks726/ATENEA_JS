@@ -1,5 +1,8 @@
 import { Component } from '@angular/core';
-import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { FormBuilder, FormGroup, FormControl } from '@angular/forms';
+import { HttpClient } from '@angular/common/http';
+import { NumberFormatStyle } from '@angular/common';
+
 
 @Component({
   selector: 'app-formulario',
@@ -9,25 +12,24 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 export class FormularioComponent {
   formularioPaciente: FormGroup;
   formularioDoctor: FormGroup;
-  tipoPersona: string = 'paciente';
+  tipoPersona: string = 'paciente o docotor';
 
-  constructor(private fb: FormBuilder) {
+  constructor(private fb: FormBuilder, private http: HttpClient) {
     this.formularioPaciente = this.fb.group({
-      tipoDocumento: ['', Validators.required],
-      idPaciente: ['', [Validators.required, Validators.pattern('^[0-9]{1,20}$')]],
-      nombre:['', Validators.required],
-      apellido: ['', Validators.required],
-      edad: ['', Validators.required, Validators.pattern('^[0-200]{1,3}')],
-      telefono: ['', Validators.required]
+      id_paciente: null,
+      nombre: '',
+      apellido: '',
+      edad: null,
+      telefono: ''
     });
 
     this.formularioDoctor = this.fb.group({
-      idDoctor: ['', [Validators.required, Validators.pattern('^[0-9]{1,20}$')]],
-      nombre: ['', Validators.required],
-      apellido: ['', Validators.required],
-      especialidad: ['', Validators.required],
-      consultorio: ['', Validators.required],
-      correo: ['', [Validators.required, Validators.pattern('[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}')]]
+      id_doctor: '',
+      nombre: '',
+      apellido: '',
+      especialidad_id: new FormControl,
+      consultorio: '',
+      correo: ''
     });
   }
 
@@ -42,15 +44,32 @@ export class FormularioComponent {
 
   submitPaciente() {
     if (this.formularioPaciente.valid) {
-      // Lógica para registrar paciente
-      console.log(this.formularioPaciente.value);
-    }
+      this.http.post<any>('http://127.0.0.1:3000/paciente', this.formularioPaciente.value).subscribe(
+        response => {
+          console.log('registro exitoso', response);
+          alert('resgistro exitoso');
+          console.log(this.formularioPaciente.value);
+        },
+        error => {
+          console.log('eror error alerta', error);
+        }
+      );
+
+    };
   }
 
   submitDoctor() {
     if (this.formularioDoctor.valid) {
-      // Lógica para registrar doctor
-console.log(this.formularioDoctor.value);
-    }
+      this.http.post<any>('http://127.0.0.1:3000/doctor', this.formularioDoctor.value).subscribe(
+        response => {
+          console.log('registro exitoso', response);
+          alert('doctor resgistrado')
+          console.log(this.formularioDoctor.value);
+        },
+        error => {
+          console.log('lo siento estas mal');
+        }
+      );
+    };
   }
 }
