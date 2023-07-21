@@ -1,80 +1,49 @@
-.regresar {
-  color: #008CBA;
-  text-decoration: none;
-}
-
-.fond {
-  background-color: #f2f2f2;
-  padding: 20px;
-}
-
-.fond header {
-  background-color: #008CBA;
-  padding: 10px;
-  color: #fff;
-}
-
-.fond header ul {
-  list-style-type: none;
-  margin: 0;
-  padding: 0;
-}
-
-.fond header ul li {
-  display: inline-block;
-  margin-right: 10px;
-}
-
-.fond header ul li a {
-  color: #fff;
-  text-decoration: none;
-}
-
-.centered-container {
-  max-width: 800px;
-  margin: 0 auto;
-  text-align: center;
-  margin-top: 20px;
-}
-
-.profile-header {
-  margin-top: 20px;
-}
-
-.profile-header h2 {
-  margin: 5px 0;
-}
-
-.profile-details {
+/* Estilos para el encabezado */
+header {
   display: flex;
-  justify-content: space-between;
+  justify-content: space-between; 
+  align-items: center; 
+  padding: 10px 20px; 
+  background-color: #f0f2f5; 
+}
+
+.header-text {
+  font-size: 24px;
+  font-weight: bold;
+  color: #1877f2;
+}
+
+.header-link {
+  color: #1877f2;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.header-link:hover{
+  color: red;
+}
+
+
+.doctor-profile {
   margin-top: 20px;
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  background-color: #fff;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); 
 }
 
-.profile-info {
-  flex: 1;
-  text-align: left;
+.profile-title {
+  font-size: 24px;
+  color: #1877f2;
+  margin-bottom: 10px;
 }
 
-.profile-actions {
-  flex: 1;
-  text-align: right;
+.doctor-info-label {
+  font-weight: bold;
+  color: #1877f2;
 }
 
-.edit-button,
-.save-button,
-.delete-button {
-  background-color: #008CBA;
-  color: #fff;
-  border: none;
-  padding: 10px 20px;
-  font-size: 16px;
-  cursor: pointer;
-  margin-right: 10px;
-}
-
-.edit-button:hover,
-.save-button:hover,
-.delete-button:hover {
-  background-color: #004466;
+.doctor-profile p {
+  margin: 5px 0;
 }

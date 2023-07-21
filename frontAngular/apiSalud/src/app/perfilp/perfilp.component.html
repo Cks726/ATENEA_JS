@@ -1,52 +1,14 @@
-<div class="fond">
-  <header class="header">
-    <nav class="navbar">
-      <ul class="nav-list">
-        <li class="nav-item">
-          <a routerLink="/perfilp" routerLinkActive="active">Perfil Paciente</a>
-        </li>
-        <li class="nav-item">
-          <a routerLink="/cita" routerLinkActive="active">Agendar Cita</a>
-        </li>
-        <li class="nav-item">
-          <a routerLink="/login" routerLinkActive="active">Cerrar Sesión</a>
-        </li>
-      </ul>
-    </nav>
-  </header>
+<header class="header">
+  <p class="header-text">Perfil</p>
+  <p><a href="/cita" class="header-link">Agendar cita</a></p>
+  <p><a href="/login" class="header-link">Cerrar sesión</a></p>
+</header>
 
-  <div class="centered-container">
-    <h2>Perfil de Usuario</h2>
-
-    <div class="form-group">
-      <label for="nombre">Nombre:</label>
-      <p id="nombre">{{ nombre }}</p>
-    </div>
-
-    <div class="form-group">
-      <label for="apellido">Apellido:</label>
-      <p id="apellido">{{ apellido }}</p>
-    </div>
-
-    <div class="form-group">
-      <label for="cedula">Número de Cédula:</label>
-      <p id="cedula">{{ cedula }}</p>
-    </div>
-
-    <div class="form-group">
-      <label for="edad">Edad:</label>
-      <p id="edad">{{ edad }}</p>
-    </div>
-
-    <div class="form-group">
-      <label for="telefono">Teléfono:</label>
-      <p id="telefono">{{ telefono }}</p>
-    </div>
-
-    <div class="buttons">
-      <button class="editarPerfil" (click)="editarPerfil()">Editar Perfil</button>
-      <button class="Guardar" (click)="guardarPerfil()">Guardar</button>
-      <button class="eliminarPerfil" (click)="eliminarPerfil()">Eliminar Perfil</button>
-    </div>
-  </div>
+<div *ngIf="paciente" class="patient-profile">
+  <h2 class="profile-title">Perfil del paciente</h2>
+  <p><strong class="patient-info-label">Número de documento:</strong> {{ paciente.id_paciente }}</p>
+  <p><strong class="patient-info-label">Nombre:</strong> {{ paciente.nombre }}</p>
+  <p><strong class="patient-info-label">Apellido:</strong> {{ paciente.apellido }}</p>
+  <p><strong class="patient-info-label">Edad:</strong> {{ paciente.edad }}</p>
+  <p><strong class="patient-info-label">Teléfono:</strong> {{ paciente.telefono }}</p>
 </div>

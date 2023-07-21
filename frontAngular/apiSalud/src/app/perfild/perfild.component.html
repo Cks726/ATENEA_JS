@@ -1,33 +1,14 @@
-<div class="fond">
-  <header>
-    <nav>
-      <ul>
-        <li><a href="/perfild">Perfil Doctor</a></li>
-        <li><a href="/login">Salir</a></li>
-      </ul>
-    </nav>
-  </header>
+<header>
+  <p class="header-text">Perfil</p>
+  <p><a href="/login" class="header-link">cerrar sesion</a></p>
+</header>
 
-  <div class="centered-container">
-    <img src="assets/img/doctor.png" alt="doctor" width="50" height="50">
-    <div class="profile-header">
-      <h2>Nombre</h2>
-      <h2>{{ doctor.nombre }}</h2>
-      <h3>{{ doctor.apellido }}</h3>
-    </div>
-
-    <div class="profile-details">
-      <div class="profile-info">
-        <p><strong>Especialización:</strong> {{ doctor.especializacion }}</p>
-        <p><strong>Consultorio:</strong> {{ doctor.consultorio }}</p>
-        <p><strong>Correo:</strong> {{ doctor.correo }}</p>
-      </div>
-
-      <div class="profile-actions">
-        <button class="edit-button">Editar Perfil</button>
-        <button class="save-button">Guardar</button>
-        <button class="delete-button">Eliminar Perfil</button>
-      </div>
-    </div>
-  </div>
+<div *ngIf="doctor" class="doctor-profile">
+  <h2 class="profile-title">Perfil del doctor</h2>
+  <p><strong class="doctor-info-label">Numero de documento:</strong> {{ doctor.id_doctor }}</p>
+  <p><strong class="doctor-info-label">Nombre:</strong> {{ doctor.nombre }}</p>
+  <p><strong class="doctor-info-label">Apellido:</strong> {{ doctor.apellido }}</p>
+  <p><strong class="doctor-info-label">Especialidad:</strong> {{ doctor.especialidad_id }}</p>
+  <p><strong class="doctor-info-label">Consultorio:</strong> {{ doctor.consultorio }}</p>
+  <p><strong class="doctor-info-label">Correo:</strong> {{ doctor.correo }}</p>
 </div>

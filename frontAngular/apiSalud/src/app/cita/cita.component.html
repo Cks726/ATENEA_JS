@@ -1,5 +1,5 @@
 <header>
-  <p><a href="/perfilp">Regresar</a></p>
+  <button (click)="goBack">Regresar</button>
 </header>
 
 
@@ -19,12 +19,7 @@
       </select>
     </div>
 
-    <div class="form-group">
-      <label for="">Lista de doctores</label>
-      <select>
-      <label for="doctor">Doctor:</label>
-      </select>
-    </div>
+   
 
     <button type="submit">Agendar Cita</button>
   </form>
@@ -47,15 +42,14 @@
     <tbody>
       <tr *ngFor="let cita of citas">
         <td>{{ cita.id }}</td>
-        <th>1234</th>
-        <th>wilsn</th>
-        <th>garzon</th>
-        <th>44</th>
+        <th>1024563964</th>
+        <th>Wilson</th>
+        <th>Garzon</th>
+        <th>28</th>
         <td>{{ cita.doctor }}</td>
         <td>{{ cita.especialista }}</td>
         <td>{{ cita.consultorio }}</td>
         <td>
-          <button (click)="editarCita(cita)">Editar</button>
           <button (click)="eliminarCita(cita)">Eliminar</button>
         </td>
       </tr>

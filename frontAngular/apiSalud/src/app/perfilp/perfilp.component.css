@@ -1,70 +1,55 @@
-.fond {
-  background-color: #f2f2f2;
-  padding: 20px;
-}
 
 .header {
-  background-color: #008CBA;
-  padding: 10px;
-  color: #fff;
-}
-
-.navbar {
-  margin-bottom: 20px;
-}
-
-.nav-list {
-  list-style-type: none;
-  margin: 0;
-  padding: 0;
-}
-
-.nav-item {
-  display: inline-block;
-  margin-right: 10px;
-}
-
-.nav-item a {
-  color: #fff;
-  text-decoration: none;
-}
-
-.centered-container {
-  max-width: 800px;
-  margin: 0 auto;
-  text-align: center;
-  margin-top: 20px;
-}
-
-.form-group {
-  margin-bottom: 15px;
-  text-align: left;
-}
-
-.form-group label {
-  display: block;
-  font-weight: bold;
-  margin-bottom: 5px;
-}
-
-.buttons {
-  margin-top: 20px;
-}
-
-.editarPerfil,
-.Guardar,
-.eliminarPerfil {
-  background-color: #4CAF50;
-  color: #fff;
-  border: none;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
   padding: 10px 20px;
-  font-size: 16px;
-  cursor: pointer;
-  margin-right: 10px;
+  background-color: #f0f2f5;
 }
 
-.editarPerfil:hover,
-.Guardar:hover,
-.eliminarPerfil:hover {
-  background-color: #45a049;
+.header-text {
+  font-size: 24px;
+  font-weight: bold;
+  color: #1877f2;
 }
+
+.header-link {
+  color: #1877f2;
+  text-decoration: none;
+  font-weight: bold;
+  margin-left: 15px; 
+}
+.header-link:hover{
+  color: red;
+}
+
+.header-link:first-child {
+  margin-left: 0; 
+}
+
+/* Estilos para el perfil del paciente */
+.patient-profile {
+  margin-top: 20px;
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  background-color: #fff;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.profile-title {
+  font-size: 24px;
+  color: #1877f2;
+  margin-bottom: 10px;
+}
+
+.patient-info-label {
+  font-weight: bold;
+  color: #1877f2;
+}
+
+.patient-profile p {
+  margin: 5px 0;
+}
+
+
